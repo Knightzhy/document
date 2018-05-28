@@ -1,0 +1,35 @@
+1. 编译&安装
+cmake . -DCMAKE_INSTALL_PREFIX=/home/knightwu/mysql
+-DMYSQL_DATADIR=/home/knightwu/mysql_data -DSYSCONFDIR=/etc
+-DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_ARCHIVE_STORAGE_ENGINE=1
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_FEDEFATED_STORAGE_ENGINE=1
+-DMYSQL_TCP_PORT=3306 -DMYSQL_UNIX_ADDR=/tmp/mysql.sock -DENABLED_LOCAL_INFILE=1
+-DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci
+-DWITH_DEBUG=0 -DENABLED_PROFILING=1 -DWITH_READLINE=1 -DWITH_SSL=system
+-DWITH_ZLIB=system -DWITH_LIBWRAP=0 -DDOWNLOAD_BOOST=1
+-DWITH_BOOST=/usr/local/boost
+
+make
+make install
+
+2. 修改系统文件参数 ulimit
+
+3. 初始化数据目录结构
+ ./mysqld --user=knightwu --basedir=/home/knightwu/mysql/ \
+                 --datadir=/home/knightwu/mysqldata/ \
+                 --secure-file-priv=/home/knightwu/mysql/ \
+                 --initialize
+ log里会显示初始密码，一定要记住,
+ 参数--initialize-insecure是可以生成无密码root账户
+
+4. 启动mysql
+ ./mysqld &
+
+5. 用客户端命令测试
+ ./mysql -h0.0.0.0 -P3306 -uroot -p
+
+6. 添加新用户的方式从5.7以后都不允许直接使用GRANT，而是要先CREATE USER 然后再
+GRANT 再FLUSH
+create user 'xxx'@'127.0.0.1' identified by '123';
+grant all on *.* to 'xxx'@'127.0.0.1' ;
+flush privileges;
