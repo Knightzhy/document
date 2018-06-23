@@ -1,0 +1,41 @@
+1. 下载
+http://ftp.gnu.org/gnu
+gcc, gmp, mpfr, mpc
+
+2. 在个人账户操作，不要使用root
+工作目录创建 gcc_build, gcc_depend
+gcc_build是编译环境，下载的包都放在这里编译
+gcc_depend是编译gmp,mpfr, mpc编译安装后产生的头文件和链接库
+
+3. 首先安装gmp
+./configure --prefix=/home/knightwu/gcc_depend
+make
+make install
+做完后，可以在gcc_depend中看到gmp的头文件和链接库
+
+4. 安装mpfr
+./configure --prefix=/home/knightwu/gcc_depend/
+    --with-gmp=/home/knightwu/gcc_depend/
+make
+make install
+mpfr是依赖gmp
+做完后，可以在gcc_depend中看到mpfr的头文件和链接库
+
+5. 安装mpc
+./configure --prefix=/home/knightwu/gcc_depend/
+    --with-gmp=/home/knightwu/gcc_depend/ --with-mpfr=/home/knightwu/gcc_depend/
+make
+make install
+
+6. export LD_LIBRARY_PATH
+    vim /etc/ld.so.conf
+    ldconfig
+
+7. 安装gcc
+./configure --prefix=/home/knightwu/gcc-8.1.0
+    --with-gmp=/home/knightwu/gcc_depend 
+    --with-mpfr=/home/knightwu/gcc_depend
+    --with-mpc=/home/knightwu/gcc_depend
+    --disable-multilib
+make
+make install
