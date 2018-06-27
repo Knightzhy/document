@@ -1,0 +1,6 @@
+1. install libexpat, apr, apr-util, pcre
+   apr-util need libexpat， apr
+
+2. install httpd
+
+3. ./bin/httpd -h
