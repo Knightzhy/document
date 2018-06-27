@@ -4,3 +4,9 @@
 2. install httpd
 
 3. ./bin/httpd -h
+
+4. change httpd.conf for cgi
+    LoadModule cgid_module
+    ScriptAlias /cgi-bin/ xxxx
+    Options +ExecCGI
+
