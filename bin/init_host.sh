@@ -19,7 +19,6 @@ hostname host-$1-$2-$3-$4.local
 
 #2. install vim
 yum install vim -y
-cp ../vimrc ~/.vimrc
 
 echo "success."
 
