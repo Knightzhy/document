@@ -5,6 +5,7 @@ if [ $# -ne 4 ]; then
     exit 1;
 fi
 
+#1. change hostname
 cat > /etc/sysconfig/network <<EOF
 HOSTNAME=host-$1-$2-$3-$4.local
 NETWORKING=yes
@@ -15,5 +16,8 @@ host-$1-$2-$3-$4.local
 EOF
 
 hostname host-$1-$2-$3-$4.local
+
+#2. 
+
 echo "success."
 
