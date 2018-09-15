@@ -1,3 +1,15 @@
 software list:
     git: yum isntall git -y
     vim: yum install vim -y
+
+
+
+hostname:
+    1. change /etc/sysconfig/network
+        NETWORKING=yes
+        HOSTNAME=host-10-0-2-15.local
+    2. do hostname host-10-0-2-15.local
+    3. change /etc/hostname
+        add a line: host-10-0-2-15.local
+    2. change /etc/host
+    3. reboot
