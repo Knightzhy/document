@@ -1,2 +1,3 @@
 software list:
-    git
+    git: yum isntall git -y
+    vim: yum install vim -y
