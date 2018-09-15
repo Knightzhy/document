@@ -1,6 +1,7 @@
 #! /bin/bash
 
 if [ $# -ne 4 ]; then
+    echo "error params."
     exit 1;
 fi
 
@@ -14,4 +15,5 @@ host-$1-$2-$3-$4.local
 EOF
 
 hostname host-$1-$2-$3-$4.local
+echo "success."
 
