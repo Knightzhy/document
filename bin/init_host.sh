@@ -20,5 +20,8 @@ hostname host-$1-$2-$3-$4.local
 #2. install vim
 yum install vim -y
 
+#3. install cmake
+yum install cmake -y
+
 echo "success."
 
