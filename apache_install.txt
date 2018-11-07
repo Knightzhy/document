@@ -10,3 +10,9 @@
     ScriptAlias /cgi-bin/ xxxx
     Options +ExecCGI
 
+5. fastcgi
+
+7. php
+    --prefix=
+    --with-apxs2=
+    --disable-all

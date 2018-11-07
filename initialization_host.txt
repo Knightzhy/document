@@ -1,6 +1,7 @@
 software list:
     git: yum isntall git -y
     vim: yum install vim -y
+    ntpdate: yum install ntpdate -y , ntpdate time.nist.gov
 
 
 

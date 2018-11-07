@@ -23,5 +23,9 @@ yum install vim -y
 #3. install cmake
 yum install cmake -y
 
+#4. install ntpdate
+yum install ntpdate -y
+ntpdate time.nist.gov
+
 echo "success."
 
