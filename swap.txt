@@ -1,0 +1,5 @@
+su root
+dd if=/dev/zero of=/tmp/swap bs=1MB count=8196
+mkswap /tmp/swap
+swapon /tmp/swap
+chmod 0600 /tmp/swap
