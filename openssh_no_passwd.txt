@@ -1,0 +1,22 @@
+两台机器，A 访问B，免密码登录
+
+0. check
+A和B的ssh版本是openssh
+
+1.
+在A上执行
+
+ssh-keygen -t rsa
+
+2.
+在A上执行
+ssh-copy-id -i /root/.ssh/id_rsa.pub user@B
+
+3.
+如果不能登录，检查B上的 .ssh/authorized_keys内容
+检查B 上.ssh目录目录权限是700，
+检查B 上.ssh/authorized_keys文件权限是600
+
+4. 锁定B机器上该账户的密码登录方式
+passwd -l user   锁定
+passwd -u user   解锁
