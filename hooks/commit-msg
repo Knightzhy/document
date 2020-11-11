@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+# coding=utf-8
+#
+# commit msg check
+import sys
+import re
+import io
+
+if hasattr(sys.stdout, 'buffer'):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+TIPS_INFO = '''
+不符合commit规范，本次提交失败（当前状态等于没做刚刚的commit操作）！
+
+commit规范：
+类型: 详细消息
+
+规范样例：
+git commit -m "<type>: <Description>"
+Type 类型必须是下面之一，并且为小写:
+
+    feat: 修改/增加新功能
+    fix: 修改bug的变更
+    docs: 文档相关变更
+    style: 不影响代码含义的变更(空白、格式、缺少符号等)
+    refactor: 代码重构变更
+    perf: 改进性能的变更
+    test: 添加/修改现有的测试
+    chore: Build, .gitignore或辅助工具、库(如文档生成)等变更
+
+！！！！本次提交失败！！！！
+'''
+
+def check_commit_line1_format(msg):
+    regOther = r'(feat|fix|docs|style|refactor|perf|test|chore):\s\w'
+    matchObj = re.match(regOther, msg)
+    return matchObj
+
+if __name__=="__main__":
+    with open(sys.argv[1], 'r') as f:
+        for line in f:
+            if (check_commit_line1_format(line)):
+                sys.exit(0)
+            else:
+                print(TIPS_INFO)
+                sys.exit(1)
