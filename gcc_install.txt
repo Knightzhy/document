@@ -27,6 +27,7 @@ gcc_depend是编译gmp,mpfr, mpc编译安装后产生的头文件和链接库
 ./configure --prefix=$THIRD_PATH --exec-prefix=$THIRD_PATH
 make & make install
 做完后，可以在$THIRD_PATH中看到gmp的头文件和链接库
+如果在configure失败，看下是不是m4要安装，一样的流程
 
 4. 安装mpfr
 ./configure --prefix=$THIRD_PATH --exec-prefix=$THIRD_PATH --with-gmp=$THIRD_PATH
