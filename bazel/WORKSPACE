@@ -6,10 +6,10 @@ local_repository(
     path = "/home/knightwu/projects/third/bazel-skylib",
 )
 
-# https://github.com/protocolbuffers/protobuf/archive/v3.16.0.tar.gz
+# https://github.com/protocolbuffers/protobuf/archive/refs/tags/v24.2.tar.gz
 local_repository(
     name = "com_google_protobuf",
-    path = "/home/knightwu/projects/third/protobuf3",
+    path = "/home/knightwu/projects/third/protobuf-24.2",
 )
 
 # https://github.com/google/googletest/archive/refs/tags/release-1.12.1.zip
@@ -18,11 +18,23 @@ local_repository(
     path = "/home/knightwu/projects/third/googletest",
 )
 
-# https://github.com/grpc/grpc/archive/refs/tags/v1.47.1.tar.gz
+# https://github.com/grpc/grpc/archive/refs/tags/v1.57.0.tar.gz
 local_repository(
     name = "com_github_grpc_grpc",
     path = "/home/knightwu/projects/third/grpc",
 )
+
+local_repository(
+    name = "build_bazel_rules_apple",
+    path = "/home/knightwu/projects/third/rules_apple-3.0.0-rc1",
+)
+
+load(
+    "@build_bazel_rules_apple//apple:repositories.bzl",
+    "apple_rules_dependencies",
+)
+
+apple_rules_dependencies()
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
