@@ -1,4 +1,6 @@
 workspace(name = "knightwu_project")
+# sudo apt install libprotoc-dev
+# export BAZEL_CXXOPTS=-std=c++11
 
 # https://github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz
 local_repository(

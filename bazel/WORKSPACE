@@ -1,40 +1,40 @@
 workspace(name = "knightwu_project")
-# sudo apt install libprotoc-dev
-# upb下载的版本要适配grpc
-# export BAZEL_CXXOPTS=-std=c++11
+# bazel常用用法
+# http://www.manongjc.com/detail/16-zdogodapesvzyoq.html
 
-# https://github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz
+# https://github.com/bazelbuild/bazel-skylib/releases/download/1.4.2/bazel-skylib-1.4.2.tar.gz
 local_repository(
     name = "bazel_skylib",
     path = "/home/knightwu/projects/third/bazel-skylib",
 )
 
-# https://github.com/protocolbuffers/protobuf/archive/refs/tags/v24.2.tar.gz
+# https://github.com/protocolbuffers/protobuf/releases/download/v24.4/protobuf-24.4.tar.gz
 local_repository(
     name = "com_google_protobuf",
     path = "/home/knightwu/projects/third/protobuf",
 )
 
-# https://github.com/google/googletest/archive/refs/tags/release-1.12.1.zip
+# https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
 local_repository(
     name = "com_google_googletest",
     path = "/home/knightwu/projects/third/googletest",
 )
 
-# https://github.com/grpc/grpc/archive/refs/tags/v1.57.0.tar.gz
+# https://github.com/grpc/grpc/archive/refs/tags/v1.59.1.zip
 local_repository(
     name = "com_github_grpc_grpc",
     path = "/home/knightwu/projects/third/grpc",
 )
-
+# https://github.com/protocolbuffers/upb/archive/52a1ddadc25ac426ade7d21e84f00ad1192c21d0.zip
 local_repository(
-    name = "upb",
-    path = "/home/knightwu/projects/third/upb",
+   name = "upb",
+   path = "/home/knightwu/projects/third/upb",
 )
 
+# https://github.com/bazelbuild/rules_apple/releases/download/3.1.1/rules_apple.3.1.1.tar.gz
 local_repository(
     name = "build_bazel_rules_apple",
-    path = "/home/knightwu/projects/third/rules_apple-3.0.0-rc1",
+    path = "/home/knightwu/projects/third/rules_apple",
 )
 
 load(
