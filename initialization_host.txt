@@ -5,11 +5,11 @@
   2.2 Sudo apt-get upgrade 更新软件，新安装linux都要执行这步
 
 3. 安装常用软件
-  3.1 Sudo apt install build-assential 编译程序常用软件，包括gcc g++
+  3.1 Sudo apt install build-essential 编译程序常用软件，包括gcc g++
 
 4. 安装bazel
 编译环境所需项目
-https://github.com/bazelbuild/bazel/releases/download/6.4.0/bazel-6.4.0-installer-darwin-arm64.sh
+https://github.com/bazelbuild/bazel/releases/download/6.4.0/bazel-6.4.0-installer-linux-x86_64.sh
 https://github.com/bazelbuild/rules_apple/releases/download/3.1.1/rules_apple.3.1.1.tar.gz
 https://github.com/bazelbuild/bazel-skylib/releases/download/1.4.2/bazel-skylib-1.4.2.tar.gz
 https://github.com/protocolbuffers/protobuf/releases/download/v24.4/protoc-24.4-linux-x86_64.zip
