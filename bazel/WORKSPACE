@@ -42,6 +42,12 @@ load(
     "apple_rules_dependencies",
 )
 
+new_local_repository(
+    name = "libco",
+    path = "/home/knightwu/projects/third/libco-1.0",
+    build_file = "//third:libco.BUILD",
+)
+
 apple_rules_dependencies()
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
