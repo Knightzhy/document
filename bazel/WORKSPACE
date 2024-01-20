@@ -42,6 +42,7 @@ load(
     "apple_rules_dependencies",
 )
 
+# https://github.com/Tencent/libco/archive/refs/tags/v1.0.tar.gz
 new_local_repository(
     name = "libco",
     path = "/home/knightwu/projects/third/libco-1.0",
